@@ -1,4 +1,6 @@
 class AppRoutes{
-  // static const HOME = '/home';
-  // static const LOADING = '/loading';
+  static const homePage = '/home';
+  static const searchPage = '/search';
+  static const updatesPage = '/updates';
+  static const accountPage = '/accounts';
 }
