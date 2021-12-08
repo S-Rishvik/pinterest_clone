@@ -9,8 +9,9 @@ class UpdatesPage extends GetView<UpdatesController>{
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         body: Text('Updates'),
       ),
     );

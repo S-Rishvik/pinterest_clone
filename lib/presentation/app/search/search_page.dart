@@ -9,8 +9,9 @@ class SearchPage extends GetView<SearchController>{
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         body: Text('Search'),
       ),
     );
