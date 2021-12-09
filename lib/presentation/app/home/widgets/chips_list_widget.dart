@@ -36,6 +36,7 @@ class ChipsList extends StatelessWidget {
               backgroundColor: getBackgroundColor(key, context),
               onPressed: () {
                 controller.selectedChip.value = key;
+                controller.getImagesFromSelectedChip();
               },
             )),
       );

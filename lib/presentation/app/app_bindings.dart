@@ -15,7 +15,7 @@ class AppBindings implements Bindings{
   void dependencies() {
     Get.lazyPut(() => AppController());
     Get.lazyPut(() => HomeController(Get.find()));
-    Get.lazyPut(() => SearchController());
+    Get.lazyPut(() => SearchController(Get.find()));
     Get.lazyPut(() => UpdatesController());
     Get.lazyPut(() => AccountController());
     Get.lazyPut<ImageSource>(() => ImageSourceImpl());

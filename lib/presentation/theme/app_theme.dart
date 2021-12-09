@@ -10,21 +10,22 @@ class AppTheme extends ChangeNotifier {
 
   static ThemeData get lightTheme {
     return ThemeData(
-        colorScheme: const ColorScheme.light(
-            primary: AppColors.white,
-            onPrimary: AppColors.black,
-            background: AppColors.white,
-            onBackground: AppColors.black,
-            secondary: AppColors.greyWhite,
-            onSecondary: AppColors.black,
-            surface: AppColors.white,
-            onSurface: AppColors.black),
-        textTheme: ThemeData.light().textTheme.apply(fontFamily: "Roboto"));
+      colorScheme: ColorScheme.light(
+          primary: AppColors.white,
+          onPrimary: AppColors.black,
+          background: AppColors.white,
+          onBackground: AppColors.black,
+          secondary: AppColors.greyWhite,
+          onSecondary: AppColors.black,
+          surface: AppColors.white,
+          onSurface: AppColors.black),
+      textTheme: ThemeData.light().textTheme.apply(fontFamily: "Roboto"),
+    );
   }
 
   static ThemeData get darkTheme {
     return ThemeData(
-        colorScheme: const ColorScheme.dark(
+        colorScheme: ColorScheme.dark(
             primary: AppColors.black,
             onPrimary: AppColors.white,
             background: AppColors.black,
