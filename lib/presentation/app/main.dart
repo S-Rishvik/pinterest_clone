@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinterest_clone/presentation/app/app_bindings.dart';
+import 'package:pinterest_clone/presentation/app/app_constants.dart';
 import 'package:pinterest_clone/presentation/app/app_controller.dart';
 import 'package:pinterest_clone/presentation/app/bottomsheet/bottom_sheet_page.dart';
 import 'package:pinterest_clone/presentation/routes/app_pages.dart';
@@ -61,7 +62,7 @@ class AppPage extends GetView<AppController> {
                 currentIndex: controller.currentIndex.value,
                 onTap: (int index) {
                   if(index==2){
-                    Get.bottomSheet(BottomSheetWidget(BottomSheetWidget.createItems));
+                    Get.bottomSheet(BottomSheetWidget(AppConstants.createItems));
                   }else{
                     controller.currentIndex.value = index;
                   }

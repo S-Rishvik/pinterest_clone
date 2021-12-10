@@ -22,7 +22,7 @@ class HomePage extends GetView<HomeController> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
-              ChipsList(controller: controller),
+              ChipsListWidget(controller: controller),
               Obx(() =>
                   controller.viewState.value.when(
                       idle: () {

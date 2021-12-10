@@ -43,6 +43,7 @@ class SearchWidget extends StatelessWidget {
                   controller: searchController.textEditingController,
                   decoration: InputDecoration(
                       hintText: 'Search for idea',
+                      border: InputBorder.none,
                       prefixIcon: Visibility(
                         child: const Icon(Icons.search),
                         visible: searchController.searchState.value ==

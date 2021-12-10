@@ -15,6 +15,7 @@ class HomeController extends GetxController {
 
   var selectedChip = 0.obs;
   var chips = [
+    'Art',
     'Abstract',
     'Fashion',
     'Paintings',
