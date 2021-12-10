@@ -18,7 +18,8 @@ class AppTheme extends ChangeNotifier {
           secondary: AppColors.greyWhite,
           onSecondary: AppColors.black,
           surface: AppColors.white,
-          onSurface: AppColors.black),
+          onSurface: AppColors.black,
+          secondaryVariant: AppColors.grey),
       textTheme: ThemeData.light().textTheme.apply(fontFamily: "Roboto"),
     );
   }
@@ -33,7 +34,8 @@ class AppTheme extends ChangeNotifier {
             secondary: AppColors.darkGrey,
             onSecondary: AppColors.white,
             surface: AppColors.black,
-            onSurface: AppColors.white),
+            onSurface: AppColors.white,
+            secondaryVariant: AppColors.black),
         textTheme: ThemeData.dark().textTheme.apply(fontFamily: "Roboto"));
   }
 

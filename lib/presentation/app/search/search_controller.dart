@@ -18,7 +18,7 @@ class SearchController extends GetxController{
 
   void getImagesByKeyWord(String keyword) async {
     viewState.value = ViewState.loading();
-    var safeResult = await getImagesByKeywordUseCase.getImagesByKeyword(GetImagesRequest(keyword, '1', '10'));
+    var safeResult = await getImagesByKeywordUseCase.getImagesByKeyword(GetImagesRequest(keyword, '1', '20'));
     handleGetImagesByKeywordSafeResult(safeResult);
   }
 

@@ -44,6 +44,8 @@ class AppPage extends GetView<AppController> {
             () => ClipRRect(
               borderRadius: BorderRadius.circular(32.0),
               child: BottomNavigationBar(
+                backgroundColor: Get.theme.colorScheme.secondary,
+                type: BottomNavigationBarType.fixed,
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                       icon: Icon(Icons.home_filled), label: 'Home'),
@@ -58,7 +60,7 @@ class AppPage extends GetView<AppController> {
                 showSelectedLabels: false,
                 showUnselectedLabels: false,
                 selectedItemColor: Theme.of(context).colorScheme.onPrimary,
-                unselectedItemColor: Theme.of(context).colorScheme.secondary,
+                unselectedItemColor: Theme.of(context).colorScheme.secondaryVariant,
                 currentIndex: controller.currentIndex.value,
                 onTap: (int index) {
                   if(index==2){

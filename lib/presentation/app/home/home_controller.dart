@@ -26,7 +26,7 @@ class HomeController extends GetxController {
 
   void getImagesFromSelectedChip() async {
     viewState.value = ViewState.loading();
-    var safeResult = await getImagesByKeywordUseCase.getImagesByKeyword(GetImagesRequest(chips[selectedChip.value], '1', '10'));
+    var safeResult = await getImagesByKeywordUseCase.getImagesByKeyword(GetImagesRequest(chips[selectedChip.value], '1', '20'));
     handleGetImagesByKeywordSafeResult(safeResult);
   }
 
