@@ -4,6 +4,7 @@ import 'package:pinterest_clone/data/sources/image_source_impl.dart';
 import 'package:pinterest_clone/domain/repositories/images_repository.dart';
 import 'package:pinterest_clone/domain/sources/image_source.dart';
 import 'package:pinterest_clone/domain/usecases/get_images_by_keyword_use_case.dart';
+import 'package:pinterest_clone/domain/usecases/get_random_images_usecase.dart';
 import 'package:pinterest_clone/presentation/app/account/account_controller.dart';
 import 'package:pinterest_clone/presentation/app/app_controller.dart';
 import 'package:pinterest_clone/presentation/app/home/home_controller.dart';
@@ -15,12 +16,13 @@ class AppBindings implements Bindings{
   void dependencies() {
     Get.lazyPut(() => AppController());
     Get.lazyPut(() => HomeController(Get.find()));
-    Get.lazyPut(() => SearchController());
-    Get.lazyPut(() => UpdatesController());
-    Get.lazyPut(() => AccountController());
+    Get.lazyPut(() => SearchController(Get.find()));
+    Get.lazyPut(() => UpdatesController(Get.find()));
+    Get.lazyPut(() => AccountController(Get.find()));
     Get.lazyPut<ImageSource>(() => ImageSourceImpl());
     Get.lazyPut<ImagesRepository>(() => ImagesRepositoryImpl(Get.find()));
     Get.lazyPut(() => GetImagesByKeywordUseCase(Get.find()));
+    Get.lazyPut(() => GetRandomImagesUseCase(Get.find()));
   }
 
 }

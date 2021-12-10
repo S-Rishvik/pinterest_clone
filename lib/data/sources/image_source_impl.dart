@@ -5,6 +5,7 @@ import 'package:http/http.dart';
 import 'package:pinterest_clone/domain/entities/get_images_request.dart';
 import 'package:pinterest_clone/data/utils/safe_result.dart';
 import 'package:pinterest_clone/domain/entities/get_images_response.dart';
+import 'package:pinterest_clone/domain/entities/get_random_images_response.dart';
 import 'package:pinterest_clone/domain/sources/image_source.dart';
 
 class ImageSourceImpl implements ImageSource {
@@ -15,6 +16,8 @@ class ImageSourceImpl implements ImageSource {
   final PAGE = 'page';
   final PER_PAGE = 'per_page';
   final ACCESS_KEY = '-LJnsYf8JKKXtcpLyAhomxk_hCbYuaCBEA5Sl_jM1kc';
+  final GET_RANDOM_IMAGES_END_POINT = 'photos/random';
+  final COUNT = 'count';
 
   @override
   Future<SafeResult<GetImagesResponse>> getImagesByKeyword(
@@ -28,9 +31,25 @@ class ImageSourceImpl implements ImageSource {
     try {
       var response = await get(uri);
       print(response.body);
-
       return SafeResult.success(
           GetImagesResponse.fromJson(jsonDecode(response.body)));
+    } on SocketException {
+      return SafeResult.failure(Exception('No Internet Connection'));
+    } catch (err) {
+      return SafeResult.failure(Exception('Something went wrong'));
+    }
+  }
+
+  @override
+  Future<SafeResult<List<GetRandomImagesResponse>>> getRandomImages(int count) async {
+    var uri = Uri.http(BASE_URL, GET_RANDOM_IMAGES_END_POINT,
+        {CLIENT_ID: ACCESS_KEY, COUNT: count.toString()});
+    try {
+      var response = await get(uri);
+      print(response.body);
+      final json = jsonDecode(response.body);
+      final list = List.from(json).map((e)=>GetRandomImagesResponse.fromJson(e)).toList();
+      return SafeResult.success(list);
     } on SocketException {
       return SafeResult.failure(Exception('No Internet Connection'));
     } catch (err) {

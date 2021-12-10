@@ -15,6 +15,7 @@ class HomeController extends GetxController {
 
   var selectedChip = 0.obs;
   var chips = [
+    'Art',
     'Abstract',
     'Fashion',
     'Paintings',
@@ -23,9 +24,9 @@ class HomeController extends GetxController {
     'Design'
   ];
 
-  void getImagesByKeyWord(String keyword) async {
+  void getImagesFromSelectedChip() async {
     viewState.value = ViewState.loading();
-    var safeResult = await getImagesByKeywordUseCase.getImagesByKeyword(GetImagesRequest(keyword, '1', '2'));
+    var safeResult = await getImagesByKeywordUseCase.getImagesByKeyword(GetImagesRequest(chips[selectedChip.value], '1', '20'));
     handleGetImagesByKeywordSafeResult(safeResult);
   }
 
